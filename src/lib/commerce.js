@@ -1,3 +1,3 @@
 import Commerce from '@chec/commerce.js';
 
-export const commerce = new Commerce('pk_test_28350e94b96652f65eb958076168cc557d6297ba563c2',true);
+export const commerce = new Commerce('pk_test_30813973fdb056df9e57571e832ee0006cd5c43beae26',true);

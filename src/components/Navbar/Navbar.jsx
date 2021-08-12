@@ -7,11 +7,8 @@ import logo from '../../assets/commerce.png';
 import useStyles from './styles';
 
 const PrimarySearchAppBar = ({ totalItems }) => {
-   const classes = useStyles();
-   const location = useLocation();
-
-  /*const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
-  
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
+  const classes = useStyles();
   const location = useLocation();
 
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -32,27 +29,27 @@ const PrimarySearchAppBar = ({ totalItems }) => {
       </MenuItem>
     </Menu>
   );
-    */
+
   return (
     <>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
         <Toolbar>
-          <Typography component={Link} to='/' variant="h6" className={classes.title} color="inherit">
-            <img src={logo} alt="commerce.js" height="25px" className={classes.image} /> Vshopee
+          <Typography component={Link} to="/" variant="h6" className={classes.title} color="inherit">
+            <img src={logo} alt="commerce.js" height="25px" className={classes.image} /> Books Gallery
           </Typography>
           <div className={classes.grow} />
-           {location.pathname === '/' && (
+          {location.pathname === '/' && (
           <div className={classes.button}>
-            <IconButton component={Link} to='/cart' aria-label="Show cart items" color="inherit">
+            <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit">
               <Badge badgeContent={totalItems} color="secondary">
                 <ShoppingCart />
               </Badge>
             </IconButton>
-          </div>)}
-          
+          </div>
+          )}
         </Toolbar>
       </AppBar>
-      
+      {renderMobileMenu}
     </>
   );
 };
